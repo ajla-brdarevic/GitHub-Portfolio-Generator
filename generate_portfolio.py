@@ -30,11 +30,11 @@ def generate_markdown(repo):
     markdown_content += f"## Repository URL\n"
     markdown_content += f"[{repo['html_url']}]({repo['html_url']})\n\n"  # URL of the repository
     markdown_content += f"## Languages\n"  # Subtitle for the languages used in the repository
-    markdown_content += f"{', '.join(repo['language']) if repo['language'] else 'No languages available!'}\n\n"  # Languages used in the repository
+    markdown_content += f"{repo['language'] if repo['language'] else 'No languages available!'}\n\n"  # Languages used in the repository
     markdown_content += f"## Topics\n"  # Subtitle for the topics of the repository
     markdown_content += f"{', '.join(repo['topics']) if repo['topics'] else 'No topics available!'}\n\n"  # Topics of the repository
     
-    with open('portfolio.md', 'a') as file:
+    with open('README.md', 'a') as file:
         file.write(markdown_content)
     print(f"Markdown content for {repo['name']} generated and appended to portfolio.md")  # Print a message indicating that the markdown content has been generated  
 
