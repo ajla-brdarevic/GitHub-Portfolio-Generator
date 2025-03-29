@@ -24,8 +24,8 @@ def fetch_repo_info(owner, repo_name):
         return None  # Return None if the request failed
 
 def generate_markdown(repo):
-    markdown_content = f"# {repo['name']}\n\n"  # Title of the repository
-    markdown_content += f"## Description\n\n"  # Subtitle for the description
+    markdown_content = f"# {repo['name']}\n"  # Title of the repository
+    markdown_content += f"\n## Description\n"  # Subtitle for the description
     markdown_content += f"{repo['description'] if repo['description'] else 'No description available!'}\n\n"  # Description of the repository
     markdown_content += f"## Repository URL\n"
     markdown_content += f"[{repo['html_url']}]({repo['html_url']})\n\n"  # URL of the repository
